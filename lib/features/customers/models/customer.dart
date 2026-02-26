@@ -7,8 +7,8 @@ class Customer {
     this.address = '',
     this.creditBalance = 0,
     this.notes = '',
-    DateTime? createdAt,
-  }) : createdAt = createdAt;
+    this.createdAt,
+  });
 
   final String id;
   final String name;

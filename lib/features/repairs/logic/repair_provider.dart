@@ -92,6 +92,7 @@ class RepairNotifier extends StateNotifier<RepairState> {
     }
   }
 
+  // Toggles filter: selecting the same status again clears the filter.
   void setFilter(RepairStatus? status) {
     if (status == state.filterStatus) {
       state = state.copyWith(clearFilter: true);
@@ -99,6 +100,8 @@ class RepairNotifier extends StateNotifier<RepairState> {
       state = state.copyWith(filterStatus: status);
     }
   }
+
+  void clearFilter() => state = state.copyWith(clearFilter: true);
 }
 
 final repairProvider =
